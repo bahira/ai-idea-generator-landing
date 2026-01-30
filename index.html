@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Idea Generator - Révolutionnez Vos Idées</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); color: #e0e0e0; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(138,43,226,0.1)"/></svg>') no-repeat center; background-size: cover; }
+        .hero h1 { font-family: 'Orbitron', monospace; font-size: 4rem; font-weight: 700; color: #ffffff; text-shadow: 0 0 20px #8a2be2; margin-bottom: 20px; }
+        .hero p { font-size: 1.5rem; margin-bottom: 40px; max-width: 600px; }
+        .cta { background: linear-gradient(45deg, #8a2be2, #ff1493); color: white; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(138,43,226,0.3); }
+        .cta:hover { transform: scale(1.05); }
+        .features { padding: 100px 0; background: rgba(255,255,255,0.05); }
+        .features h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(138,43,226,0.2); transition: transform 0.3s; }
+        .feature:hover { transform: translateY(-10px); }
+        .feature h3 { font-family: 'Orbitron'; color: #ff1493; }
+        .testimonials { padding: 100px 0; }
+        .testimonials h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
+        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-bottom: 30px; backdrop-filter: blur(10px); }
+        .testimonial p { font-style: italic; }
+        .testimonial cite { font-weight: bold; color: #ff1493; }
+        .pricing { padding: 100px 0; background: rgba(255,255,255,0.05); text-align: center; }
+        .pricing h2 { font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
+        .price { background: linear-gradient(45deg, #8a2be2, #ff1493); color: white; padding: 50px; border-radius: 15px; display: inline-block; box-shadow: 0 4px 15px rgba(138,43,226,0.3); }
+        .price h3 { font-size: 2rem; margin-bottom: 20px; }
+        .price p { font-size: 1.2rem; }
+        .footer { padding: 50px 0; text-align: center; background: rgba(0,0,0,0.5); }
+        .footer p { margin: 0; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .hero h1 { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>AI Idea Generator</h1>
+            <p>Révolutionnez vos idées avec l'IA la plus avancée. Générez des concepts innovants en un clic, sans limites.</p>
+            <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Acheter Maintenant - $5</button>
+            <p style="margin-top: 20px; font-size: 1rem; color: #ccc;">Offre limitée : Bêta exclusive pour les premiers 100 utilisateurs !</p>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <h2>Fonctionnalités Révolutionnaires</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Génération Instantanée</h3>
+                    <p>Idées créatives en secondes, alimentées par des modèles IA de pointe.</p>
+                </div>
+                <div class="feature">
+                    <h3>Personnalisation Avancée</h3>
+                    <p>Adaptez les idées à votre domaine, style, et objectifs.</p>
+                </div>
+                <div class="feature">
+                    <h3>Interface Futuriste</h3>
+                    <p>Expérience utilisateur immersive avec design retro-futuriste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <h2>Témoignages</h2>
+            <div class="testimonial">
+                <p>"Cet outil a transformé ma façon de penser. Idées incroyables en un instant !"</p>
+                <cite>- Innovateur Tech, Startup Financée</cite>
+            </div>
+            <div class="testimonial">
+                <p>"La meilleure IA pour la créativité. Recommandé à tous les entrepreneurs."</p>
+                <cite>- CEO, Compagnie IA</cite>
+            </div>
+        </div>
+    </section>
+    <section class="pricing">
+        <div class="container">
+            <h2>Tarification</h2>
+            <div class="price">
+                <h3>$5 par Génération</h3>
+                <p>Paiement unique, accès immédiat. Pas d'abonnement, juste des idées infinies.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 The Sentinel. Tous droits réservés. Propulsé par IA Avancée.</p>
+        </div>
+    </footer>
+</body>
+</html>
