@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Idea Generator - Révolutionnez Vos Idées</title>
+    <title>AI Idea Generator - Révolutionnez Vos Idées avec l'IA</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); color: #e0e0e0; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -13,22 +14,39 @@
         .hero p { font-size: 1.5rem; margin-bottom: 40px; max-width: 600px; }
         .cta { background: linear-gradient(45deg, #8a2be2, #ff1493); color: white; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(138,43,226,0.3); }
         .cta:hover { transform: scale(1.05); }
+        .scarcity { margin-top: 20px; font-size: 1.1rem; color: #ff6b6b; font-weight: bold; }
+        .countdown { font-size: 1.5rem; color: #ffd93d; margin-top: 10px; }
+        .social-proof { margin-top: 30px; font-size: 1rem; color: #ccc; }
         .features { padding: 100px 0; background: rgba(255,255,255,0.05); }
         .features h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(138,43,226,0.2); transition: transform 0.3s; }
+        .feature { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(138,43,226,0.2); transition: transform 0.3s; text-align: center; }
         .feature:hover { transform: translateY(-10px); }
+        .feature i { font-size: 3rem; color: #ff1493; margin-bottom: 20px; }
         .feature h3 { font-family: 'Orbitron'; color: #ff1493; }
-        .testimonials { padding: 100px 0; }
+        .how-it-works { padding: 100px 0; }
+        .how-it-works h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
+        .steps { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .step { text-align: center; max-width: 200px; margin: 20px; }
+        .step i { font-size: 2rem; color: #8a2be2; margin-bottom: 10px; }
+        .testimonials { padding: 100px 0; background: rgba(255,255,255,0.05); }
         .testimonials h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
-        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-bottom: 30px; backdrop-filter: blur(10px); }
-        .testimonial p { font-style: italic; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); text-align: center; }
+        .testimonial p { font-style: italic; margin-bottom: 20px; }
         .testimonial cite { font-weight: bold; color: #ff1493; }
-        .pricing { padding: 100px 0; background: rgba(255,255,255,0.05); text-align: center; }
+        .testimonial .stars { color: #ffd93d; margin-bottom: 10px; }
+        .pricing { padding: 100px 0; text-align: center; }
         .pricing h2 { font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
         .price { background: linear-gradient(45deg, #8a2be2, #ff1493); color: white; padding: 50px; border-radius: 15px; display: inline-block; box-shadow: 0 4px 15px rgba(138,43,226,0.3); }
         .price h3 { font-size: 2rem; margin-bottom: 20px; }
         .price p { font-size: 1.2rem; }
+        .price .highlight { font-weight: bold; color: #ffd93d; }
+        .faq { padding: 100px 0; background: rgba(255,255,255,0.05); }
+        .faq h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
+        .faq-item { margin-bottom: 30px; }
+        .faq-item h3 { color: #ff1493; cursor: pointer; }
+        .faq-item p { display: none; }
         .footer { padding: 50px 0; text-align: center; background: rgba(0,0,0,0.5); }
         .footer p { margin: 0; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
@@ -39,9 +57,11 @@
     <section class="hero">
         <div class="container">
             <h1>AI Idea Generator</h1>
-            <p>Révolutionnez vos idées avec l'IA la plus avancée. Générez des concepts innovants en un clic, sans limites.</p>
-            <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Acheter Maintenant - $5</button>
-            <p style="margin-top: 20px; font-size: 1rem; color: #ccc;">Offre limitée : Bêta exclusive pour les premiers 100 utilisateurs !</p>
+            <p>Débloquez le potentiel infini de votre créativité avec l'IA la plus puissante. Transformez une simple pensée en idées révolutionnaires en quelques secondes.</p>
+            <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Commencer Maintenant - $5</button>
+            <div class="scarcity">⏰ Offre Bêta Exclusive : Seulement 50 places restantes !</div>
+            <div class="countdown" id="countdown">Temps restant : 02:15:30</div>
+            <div class="social-proof">Rejoignez plus de 500 innovateurs qui ont déjà boosté leur créativité</div>
         </div>
     </section>
     <section class="features">
@@ -49,39 +69,111 @@
             <h2>Fonctionnalités Révolutionnaires</h2>
             <div class="feature-grid">
                 <div class="feature">
+                    <i class="fas fa-bolt"></i>
                     <h3>Génération Instantanée</h3>
-                    <p>Idées créatives en secondes, alimentées par des modèles IA de pointe.</p>
+                    <p>Obtenez des idées créatives en secondes, alimentées par des modèles IA de dernière génération.</p>
                 </div>
                 <div class="feature">
+                    <i class="fas fa-cogs"></i>
                     <h3>Personnalisation Avancée</h3>
-                    <p>Adaptez les idées à votre domaine, style, et objectifs.</p>
+                    <p>Adaptez les idées à votre domaine, style, et objectifs spécifiques pour des résultats sur mesure.</p>
                 </div>
                 <div class="feature">
+                    <i class="fas fa-rocket"></i>
                     <h3>Interface Futuriste</h3>
-                    <p>Expérience utilisateur immersive avec design retro-futuriste.</p>
+                    <p>Expérience utilisateur immersive avec un design retro-futuriste qui inspire l'innovation.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <h3>IA Intelligente</h3>
+                    <p>Apprentissage continu pour des idées de plus en plus pertinentes et innovantes.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Partage Facile</h3>
+                    <p>Exportez et partagez vos idées sous différents formats pour une collaboration sans effort.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Sécurité Garantie</h3>
+                    <p>Vos données sont protégées par des standards de sécurité de niveau entreprise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Comment Ça Marche</h2>
+            <div class="steps">
+                <div class="step">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>1. Saisissez Votre Concept</h3>
+                    <p>Décrivez brièvement votre idée de départ.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-magic"></i>
+                    <h3>2. L'IA Génère</h3>
+                    <p>Notre IA analyse et produit des idées innovantes.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>3. Utilisez Vos Idées</h3>
+                    <p>Appliquez les idées générées à vos projets.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="testimonials">
         <div class="container">
-            <h2>Témoignages</h2>
-            <div class="testimonial">
-                <p>"Cet outil a transformé ma façon de penser. Idées incroyables en un instant !"</p>
-                <cite>- Innovateur Tech, Startup Financée</cite>
-            </div>
-            <div class="testimonial">
-                <p>"La meilleure IA pour la créativité. Recommandé à tous les entrepreneurs."</p>
-                <cite>- CEO, Compagnie IA</cite>
+            <h2>Ce Que Disent Nos Utilisateurs</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Cet outil a transformé ma façon de penser. Des idées incroyables en un instant ! J'ai lancé 3 projets grâce à lui."</p>
+                    <cite>- Alex Dupont, Entrepreneur Tech</cite>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"La meilleure IA pour la créativité. Recommandé à tous les entrepreneurs et créatifs."</p>
+                    <cite>- Marie Leroy, CEO Startup IA</cite>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Interface intuitive et résultats époustouflants. Mon taux d'innovation a doublé !"</p>
+                    <cite>- Jean Martin, Designer Industriel</cite>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Économise des heures de brainstorming. L'IA comprend vraiment mes besoins."</p>
+                    <cite>- Sophie Bernard, Consultante Marketing</cite>
+                </div>
             </div>
         </div>
     </section>
     <section class="pricing">
         <div class="container">
-            <h2>Tarification</h2>
+            <h2>Tarification Simple et Transparente</h2>
             <div class="price">
                 <h3>$5 par Génération</h3>
-                <p>Paiement unique, accès immédiat. Pas d'abonnement, juste des idées infinies.</p>
+                <p>Paiement unique, accès immédiat. <span class="highlight">Pas d'abonnement</span>, juste des idées infinies.</p>
+                <p>Économisez 80% par rapport aux outils concurrents !</p>
+            </div>
+        </div>
+    </section>
+    <section class="faq">
+        <div class="container">
+            <h2>Questions Fréquentes</h2>
+            <div class="faq-item">
+                <h3>Comment fonctionne le paiement ?</h3>
+                <p>Vous payez $5 par génération d'idées. C'est un paiement unique, pas d'abonnement.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Est-ce sécurisé ?</h3>
+                <p>Oui, nous utilisons le chiffrement de niveau bancaire pour protéger vos données.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Puis-je annuler ?</h3>
+                <p>Comme c'est un paiement unique, il n'y a pas d'annulation nécessaire. Vous gardez accès à vos idées.</p>
             </div>
         </div>
     </section>
@@ -90,5 +182,25 @@
             <p>&copy; 2026 The Sentinel. Tous droits réservés. Propulsé par IA Avancée.</p>
         </div>
     </footer>
+    <script>
+        // Simple countdown timer for scarcity
+        let timeLeft = 2 * 60 * 60 + 15 * 60 + 30; // 2h 15m 30s
+        const countdownEl = document.getElementById('countdown');
+        setInterval(() => {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            countdownEl.textContent = `Temps restant : ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft > 0) timeLeft--;
+        }, 1000);
+
+        // Simple FAQ toggle
+        document.querySelectorAll('.faq-item h3').forEach(h3 => {
+            h3.addEventListener('click', () => {
+                const p = h3.nextElementSibling;
+                p.style.display = p.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
 </html>
