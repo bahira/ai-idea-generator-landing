@@ -12,7 +12,7 @@
         .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(138,43,226,0.1)"/></svg>') no-repeat center; background-size: cover; }
         .hero h1 { font-family: 'Orbitron', monospace; font-size: 4rem; font-weight: 700; color: #ffffff; text-shadow: 0 0 20px #8a2be2; margin-bottom: 20px; }
         .hero p { font-size: 1.5rem; margin-bottom: 40px; max-width: 600px; }
-        .cta { background: linear-gradient(45deg, #8a2be2, #ff1493); color: white; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(138,43,226,0.3); }
+        .cta { background: linear-gradient(45deg, #8a2be2, #ff1493); color: white; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(138,43,226,0.3); animation: pulse 2s infinite; }
         .cta:hover { transform: scale(1.05); }
         .scarcity { margin-top: 20px; font-size: 1.1rem; color: #ff6b6b; font-weight: bold; }
         .countdown { font-size: 1.5rem; color: #ffd93d; margin-top: 10px; }
@@ -51,6 +51,16 @@
         .footer p { margin: 0; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
         .hero h1 { animation: float 3s ease-in-out infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 4px 15px rgba(138,43,226,0.3); } 50% { box-shadow: 0 4px 25px rgba(138,43,226,0.6); } 100% { box-shadow: 0 4px 15px rgba(138,43,226,0.3); } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .cta { font-size: 1rem; padding: 12px 25px; }
+            .features h2, .how-it-works h2, .testimonials h2, .pricing h2, .faq h2 { font-size: 2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .steps { flex-direction: column; align-items: center; }
+        }
     </style>
 </head>
 <body>
