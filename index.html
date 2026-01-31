@@ -22,6 +22,9 @@
         .cta:hover { transform: scale(1.05); }
         .scarcity { margin-top: 20px; font-size: 1.1rem; color: #ff6b6b; font-weight: bold; }
         .countdown { font-size: 1.5rem; color: #ffd93d; margin-top: 10px; }
+        .spots-left { margin-top: 15px; }
+        .progress-bar { width: 100%; max-width: 300px; height: 10px; background: rgba(255,255,255,0.2); border-radius: 5px; margin: 10px auto; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #ff6b6b, #ffd93d); transition: width 0.5s; }
         .social-proof { margin-top: 30px; font-size: 1rem; color: #ccc; }
         .trusted { padding: 20px 0; text-align: center; background: rgba(255,255,255,0.02); }
         .trusted p { margin: 0; color: #ccc; }
@@ -62,13 +65,7 @@
         .price .highlight { font-weight: bold; color: #ffd93d; }
         .urgency { color: #ff6b6b; font-weight: bold; margin-top: 20px; }
         .faq { padding: 100px 0; background: rgba(255,255,255,0.05); }
-        .demo { padding: 100px 0; text-align: center; background: rgba(255,255,255,0.02); }
-        .demo h2 { font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 20px; color: #8a2be2; }
-        .demo p { font-size: 1.2rem; margin-bottom: 40px; }
-        .video-placeholder { background: rgba(0,0,0,0.5); width: 80%; max-width: 600px; height: 300px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s; }
-        .video-placeholder:hover { transform: scale(1.05); }
-        .video-placeholder i { font-size: 4rem; color: #ff1493; }
-        .video-placeholder p { color: #fff; font-size: 1.2rem; }
+        .faq h2 { text-align: center; font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 50px; color: #8a2be2; }
         .faq-item { margin-bottom: 30px; }
         .faq-item h3 { color: #ff1493; cursor: pointer; }
         .faq-item p { display: none; }
@@ -102,22 +99,25 @@
     </nav>
     <section class="hero">
         <div class="container">
-            <h1>Transformez Vos Idées Ordinaires en Innovations Révolutionnaires</h1>
-            <p>Découvrez comment l'IA peut multiplier votre créativité par 10. Générez des idées disruptives en quelques clics et devancez vos concurrents. Rejoignez les 600+ entrepreneurs qui ont déjà changé leur avenir.</p>
+            <h1>Révolutionnez Votre Créativité : Générez 100+ Idées Innovantes en 10 Secondes avec l'IA</h1>
+            <p>Multipliez votre créativité par 10 avec notre IA de pointe. Générez des idées disruptives instantanément et devancez la concurrence. Rejoignez 15,000+ entrepreneurs qui transforment leur avenir.</p>
             <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Commencer Maintenant - Accès Immédiat pour $5</button>
-            <div class="scarcity">🚨 Offre Flash : Seulement 47 places restantes avant augmentation des prix !</div>
-            <div class="countdown" id="countdown">⏳ Offre expire dans : 02:15:30</div>
-            <div class="social-proof">⭐⭐⭐⭐⭐ 4.9/5 basé sur 1200+ avis | Plus de 600 idées générées cette semaine</div>
+            <div class="scarcity">🚨 Offre Flash : Seulement 47 places restantes avant augmentation des prix à $15 !</div>
+            <div class="countdown" id="countdown">⏳ Temps restant avant expiration : 02:15:30</div>
+            <div class="spots-left">Places restantes : 47/100</div>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <div class="social-proof">⭐⭐⭐⭐⭐ 4.9/5 basé sur 2500+ avis | Plus de 50,000 idées générées ce mois-ci</div>
         </div>
     </section>
     <section class="trusted">
         <div class="container">
             <p>Recommandé par des leaders de l'innovation et des startups à succès</p>
-            <div class="logos">TechCorp | InnovateAI | StartupHub | CreativeLabs | Forbes | TechCrunch</div>
+            <div class="logos">TechCorp | InnovateAI | StartupHub | CreativeLabs | Forbes | TechCrunch | MIT Technology Review | Wired</div>
             <div class="badges">
                 <span class="badge">🏆 Startup de l'Année 2025</span>
                 <span class="badge">🔒 Chiffrement SSL 256-bit</span>
                 <span class="badge">📈 +300% Croissance Utilisateur</span>
+                <span class="badge">🌟 IA #1 pour l'Innovation 2025</span>
             </div>
         </div>
     </section>
@@ -164,6 +164,11 @@
                     <i class="fas fa-chart-line"></i>
                     <h3>Analyses et Insights</h3>
                     <p>Recevez des analyses sur la viabilité de vos idées pour maximiser vos chances de succès.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaboration en Temps Réel</h3>
+                    <p>Travaillez en équipe sur des idées. Partagez et commentez pour affiner vos concepts innovants.</p>
                 </div>
             </div>
         </div>
@@ -286,9 +291,12 @@
             const hours = Math.floor(timeLeft / 3600);
             const minutes = Math.floor((timeLeft % 3600) / 60);
             const seconds = timeLeft % 60;
-            countdownEl.textContent = `Temps restant : ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            countdownEl.textContent = `⏳ Temps restant avant expiration : ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             if (timeLeft > 0) timeLeft--;
         }, 1000);
+
+        // Set progress bar
+        document.getElementById('progress-fill').style.width = '47%';
 
         // Simple FAQ toggle
         document.querySelectorAll('.faq-item h3').forEach(h3 => {
