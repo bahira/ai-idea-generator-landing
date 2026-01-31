@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Idea Generator - Révolutionnez Vos Idées avec l'IA | Générateur d'Idées Innovantes Puissant</title>
-    <meta name="description" content="Transformez vos idées banales en concepts révolutionnaires avec notre IA avancée. Générez 100+ idées innovantes en 10 secondes. Utilisé par 18,500+ entrepreneurs qui ont levé $50M+. Accès à vie pour seulement $5.">
+    <meta name="description" content="Transformez vos idées banales en concepts révolutionnaires avec notre IA avancée. Générez 500+ idées innovantes en 5 minutes. Utilisé par 18,500+ entrepreneurs qui ont levé $50M+. Accès à vie pour seulement $5.">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,8 +15,6 @@
         .nav-links { list-style: none; display: flex; gap: 25px; }
         .nav-links a { color: #e0e0e0; text-decoration: none; transition: all 0.3s; font-weight: 500; }
         .nav-links a:hover { color: #ff1493; transform: translateY(-2px); }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; }
-        .hamburger span { width: 25px; height: 3px; background: #e0e0e0; margin: 3px 0; transition: 0.3s; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(138,43,226,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(255,20,147,0.05);stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23grad1)"/></svg>') no-repeat center; background-size: cover; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 40%, rgba(138,43,226,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,20,147,0.1) 0%, transparent 50%); animation: hero-bg 10s ease-in-out infinite alternate; }
@@ -95,16 +93,14 @@
         .guarantee h2 { color: #ff1493; font-family: 'Orbitron'; font-size: 2.2rem; margin-bottom: 20px; }
         .guarantee p { color: #d0d0d0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; }
         .guarantee-icon { font-size: 3rem; color: #ffd93d; }
-        .footer { background: rgba(0,0,0,0.8); padding: 40px 0; text-align: center; border-top: 1px solid rgba(138,43,226,0.3); }
-        .footer-content p { margin: 0 0 20px; color: #ccc; }
-        .footer-links { list-style: none; display: flex; justify-content: center; gap: 30px; padding: 0; }
-        .footer-links a { color: #8a2be2; text-decoration: none; transition: color 0.3s; }
-        .footer-links a:hover { color: #ff1493; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
         @keyframes pulse { 0% { box-shadow: 0 8px 25px rgba(138,43,226,0.4); } 50% { box-shadow: 0 12px 35px rgba(138,43,226,0.7); } 100% { box-shadow: 0 8px 25px rgba(138,43,226,0.4); } }
         @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes hero-bg { 0% { opacity: 0.5; } 100% { opacity: 1; } }
         @keyframes progress-glow { 0% { box-shadow: 0 0 10px rgba(255,107,107,0.5); } 100% { box-shadow: 0 0 20px rgba(255,107,107,0.8); } }
+        .fomo { animation: blink 1s infinite; }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.5; } }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.3rem; }
@@ -121,7 +117,6 @@
             .price h3 { font-size: 2rem; }
             .video-placeholder { width: 95%; height: 280px; }
             .nav-links { display: none; } /* Mobile menu would need JS for toggle */
-            .footer-links { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -135,23 +130,18 @@
                 <li><a href="#testimonials">Témoignages</a></li>
                 <li><a href="#pricing">Tarifs</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
     <section class="hero">
         <div class="container">
-            <h1>Transformez Une Idée Simple en Empire Multimillionnaire : 100+ Concepts Révolutionnaires en 10 Secondes</h1>
-            <p>Imaginez : En 10 secondes, vous détenez des centaines d'idées disruptives capables de transformer votre garage en empire multimillionnaire. Notre IA de pointe, entraînée sur des milliards de données, génère des concepts si innovants qu'ils surpassent l'expertise humaine. Rejoignez 18,500+ visionnaires qui ont déjà levé $50M+ et bâti des startups unicornes avec nos idées révolutionnaires.</p>
+            <h1>Arrêtez les Idées Banales : Générez 500+ Concepts Millionnaires en 5 Minutes Avec Notre IA Révolutionnaire</h1>
+            <p>Imaginez : En moins de 5 minutes, accédez à des centaines d'idées disruptives qui ont déjà créé des empires multimillionnaires. Notre IA ultra-avancée, entraînée sur des milliards de données réelles, produit des concepts si innovants qu'ils surpassent toute expertise humaine. 18,500+ entrepreneurs ont levé $50M+ et lancé des startups unicornes grâce à nous. Votre idée révolutionnaire n'attend que vous – et elle pourrait valoir des millions !</p>
             <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Accéder Maintenant – Seulement $5 à Vie</button>
-            <div class="scarcity">🚨 OFFRE LIMITÉE : $5 au lieu de $25 – 80% d'Économie – Cette Promotion Explose Bientôt !</div>
-            <div class="countdown" id="countdown">⏰ Offre Expire Dans : <span id="time">02:15:30</span> – Agissez Maintenant !</div>
-            <div class="spots-left" id="spots-left">🔥 PLACES LIMITÉES : Seulement 47 sur 100 Disponibles – Réservez Avant Qu'Il Soit Trop Tard !</div>
+            <div class="scarcity">🚨 DERNIÈRE CHANCE : $5 au lieu de $25 – 80% d'Économie – Cette Offre Explose Bientôt !</div>
+            <div class="countdown" id="countdown">⏰ Offre Expire Dans : <span id="time">02:15:30</span> – Agissez MAINTENANT !</div>
+            <div class="spots-left fomo" id="spots-left">🔥 URGENT : Seulement 47 Places sur 100 Restantes – Ne Manquez Pas Votre Chance !</div>
             <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-            <div class="social-proof">🌟 4.9/5 (3,247 Avis Vérifiés) | 67,392 Idées Cette Semaine | $50M+ Levés | Approuvé par Forbes, TechCrunch, MIT | 18,500+ Innovateurs Rejoignent Chaque Mois</div>
+            <div class="social-proof">⭐⭐⭐⭐⭐ 4.9/5 (3,247 avis vérifiés) | 67,392 idées générées cette semaine | $50M+ levés par nos utilisateurs | Approuvé par Forbes, TechCrunch & MIT | Rejoignez 18,500+ entrepreneurs à succès</div>
         </div>
     </section>
     <section class="trusted">
@@ -164,23 +154,24 @@
                 <span class="badge">📈 +300% Croissance Utilisateur</span>
                 <span class="badge">🌟 IA #1 pour l'Innovation 2025</span>
                 <span class="badge">💰 $50M+ Levés par Nos Utilisateurs</span>
+                <span class="badge">🎯 99.9% Satisfaction Client</span>
             </div>
         </div>
     </section>
     <section class="why-choose">
         <div class="container">
-            <h2>Pourquoi Des Milliers d'Entrepreneurs Transforment Leur Vie Grâce à Notre IA : Voici Leur Secret</h2>
-            <p>Notre IA n'est pas qu'un outil – c'est le catalyseur qui a permis à 18,500+ visionnaires de passer de l'idée au succès multimillionnaire. Avec plus de $50M levés et des milliers d'emplois créés, rejoignez ceux qui ont révolutionné leur industrie.</p>
+            <h2>Pourquoi 18,500+ Entrepreneurs et Innovateurs Font Confiance à Notre IA Révolutionnaire</h2>
+            <p>Rejoignez l'élite des innovateurs qui transforment des idées simples en empires multimillionnaires. Notre IA a déjà généré des concepts qui ont levé plus de $50M en financement, créé des milliers d'emplois et révolutionné des industries entières. Voici pourquoi ils choisissent nous :</p>
             <div class="stats">
                 <div class="stat">18,500+ Utilisateurs Satisfaits</div>
                 <div class="stat">500,000+ Idées Révolutionnaires Générées</div>
                 <div class="stat">4.9/5 Score de Satisfaction</div>
+                <div class="stat">$50M+ Levés par Nos Utilisateurs</div>
             </div>
-        </div>
-    </section>
+        </section>
     <section class="features" id="features">
         <div class="container">
-            <h2>Découvrez les Fonctionnalités Qui Transforment Votre Créativité en Profits</h2>
+            <h2>Fonctionnalités Révolutionnaires Qui Font Toute la Différence</h2>
             <div class="feature-grid">
                 <div class="feature">
                     <i class="fas fa-bolt"></i>
@@ -195,62 +186,62 @@
                 <div class="feature">
                     <i class="fas fa-rocket"></i>
                     <h3>Interface Intuitive et Moderne</h3>
-                    <p>Design épuré et futuriste qui rend la génération d'idées aussi simple qu'un jeu.</p>
+                    <p>Design épuré et futuriste qui rend la génération d'idées aussi simple qu'un jeu. Aucun apprentissage requis – commencez immédiatement.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-brain"></i>
                     <h3>IA Auto-Apprenante</h3>
-                    <p>L'IA s'améliore constamment pour vous proposer des idées de plus en plus pertinentes et originales.</p>
+                    <p>L'IA s'améliore constamment pour vous proposer des idées de plus en plus pertinentes et originales, basées sur les tendances du marché en temps réel.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-share-alt"></i>
                     <h3>Export et Collaboration</h3>
-                    <p>Partagez vos idées en PDF, image ou texte. Idéal pour le travail d'équipe et les présentations.</p>
+                    <p>Partagez vos idées en PDF, image ou texte. Idéal pour le travail d'équipe et les présentations. Collaborez en temps réel avec votre équipe.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Sécurité de Niveau Entreprise</h3>
-                    <p>Vos données sont chiffrées et jamais partagées. Conformité RGPD garantie.</p>
+                    <p>Vos données sont chiffrées et jamais partagées. Conformité RGPD garantie. Vos idées restent confidentielles et sécurisées.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-code"></i>
                     <h3>API et Intégrations</h3>
-                    <p>Intégrez l'IA dans vos outils via API. Compatible avec Slack, Trello et plus.</p>
+                    <p>Intégrez l'IA dans vos outils via API. Compatible avec Slack, Trello, Notion et plus. Automatisez votre workflow créatif.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-chart-line"></i>
                     <h3>Analyses et Insights</h3>
-                    <p>Recevez des analyses sur la viabilité de vos idées pour maximiser vos chances de succès.</p>
+                    <p>Recevez des analyses détaillées sur la viabilité de vos idées, incluant projections financières et analyses de marché pour maximiser vos chances de succès.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-users"></i>
                     <h3>Collaboration en Temps Réel</h3>
-                    <p>Travaillez en équipe sur des idées. Partagez et commentez pour affiner vos concepts innovants.</p>
+                    <p>Travaillez en équipe sur des idées. Partagez, commentez et votez pour affiner vos concepts innovants ensemble.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-trending-up"></i>
                     <h3>Analyse de Tendances IA</h3>
-                    <p>Intégrez les dernières tendances du marché pour des idées toujours à la pointe de l'innovation.</p>
+                    <p>Intégrez les dernières tendances du marché pour des idées toujours à la pointe de l'innovation. Restez devant la concurrence.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-star"></i>
                     <h3>Score de Validation d'Idées</h3>
-                    <p>Recevez un score de viabilité pour chaque idée, basé sur des données réelles et des analyses prédictives.</p>
+                    <p>Recevez un score de viabilité pour chaque idée, basé sur des données réelles et des analyses prédictives – Maximisez vos chances de succès dès le départ.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-globe"></i>
                     <h3>Support Multi-Langues</h3>
-                    <p>Générez des idées dans plus de 50 langues. Parfait pour les marchés internationaux et la diversité culturelle.</p>
+                    <p>Générez des idées dans plus de 50 langues. Parfait pour les marchés internationaux et la diversité culturelle. Pensez global, agissez local.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-clock"></i>
                     <h3>Historique Illimité</h3>
-                    <p>Accédez à toutes vos idées générées précédemment. Jamais de perte de créativité passée.</p>
+                    <p>Accédez à toutes vos idées générées précédemment. Jamais de perte de créativité passée. Revenez à vos idées favorites à tout moment.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-trophy"></i>
                     <h3>Récompenses et Badges</h3>
-                    <p>Gagnez des badges pour vos idées les plus innovantes et montez dans le classement des créateurs.</p>
+                    <p>Gagnez des badges pour vos idées les plus innovantes et montez dans le classement des créateurs. Montrez votre génie créatif au monde.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-robot"></i>
@@ -258,48 +249,49 @@
                     <p>Chaque idée est automatiquement validée par l'IA pour sa viabilité commerciale, potentiel de croissance et originalité – Maximisez vos chances de succès dès le départ.</p>
                 </div>
                 <div class="feature">
-                    <i class="fas fa-infinity"></i>
-                    <h3>Accès Illimité à Vie</h3>
-                    <p>Générez autant d'idées que vous voulez, quand vous voulez. Aucun frais supplémentaire – votre créativité n'a plus de limites avec cet investissement unique.</p>
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Générateur de Business Plans IA</h3>
+                    <p>Créez automatiquement des business plans complets pour vos idées, incluant analyses SWOT, projections financières et stratégies de lancement – Tout en un clic !</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="demo" id="demo">
         <div class="container">
-            <h2>Regardez l'IA Transformer des Idées Ordinaires en Or</h2>
-            <p>Découvrez en vidéo comment notre IA génère des idées révolutionnaires en moins de 30 secondes – et comment elles peuvent changer votre vie.</p>
+            <h2>Voir l'IA en Action : Démo en 30 Secondes</h2>
+            <p>Découvrez comment générer des idées révolutionnaires qui changent la vie en 30 secondes. Cliquez et voyez la magie opérer !</p>
             <div class="video-placeholder">
                 <i class="fas fa-play-circle"></i>
                 <p>Cliquez pour voir la démo</p>
+                <p>Voir comment 18,500+ utilisateurs ont transformé leurs idées</p>
             </div>
         </div>
     </section>
     <section class="how-it-works">
         <div class="container">
-            <h2>Comment Ça Marche</h2>
+            <h2>Comment Ça Marche : 3 Étapes Simples Vers le Succès</h2>
             <div class="steps">
                 <div class="step">
                     <i class="fas fa-lightbulb"></i>
                     <h3>1. Saisissez Votre Concept</h3>
-                    <p>Décrivez brièvement votre idée de départ.</p>
+                    <p>Décrivez brièvement votre idée de départ ou laissez l'IA explorer librement. Plus vous donnez de détails, plus les idées sont précises.</p>
                 </div>
                 <div class="step">
                     <i class="fas fa-magic"></i>
-                    <h3>2. L'IA Génère</h3>
-                    <p>Notre IA analyse et produit des idées innovantes.</p>
+                    <h3>2. L'IA Génère Magiquement</h3>
+                    <p>Notre IA analyse des milliards de données et produit des idées disruptives en quelques secondes. Chaque idée est unique et viable.</p>
                 </div>
                 <div class="step">
                     <i class="fas fa-check-circle"></i>
-                    <h3>3. Utilisez Vos Idées</h3>
-                    <p>Appliquez les idées générées à vos projets.</p>
+                    <h3>3. Lancez Votre Empire</h3>
+                    <p>Appliquez les idées générées à vos projets. Avec nos analyses intégrées, vous savez exactement lesquelles poursuivre pour maximiser vos profits.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2>Histoires de Succès Réels : Ce Que Disent Nos 18,500+ Utilisateurs Satisfaits</h2>
+            <h2>Ce Que Disent Nos 18,500+ Utilisateurs À Succès</h2>
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
@@ -308,101 +300,101 @@
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"La meilleure IA pour la créativité. Recommandé à tous les entrepreneurs et créatifs."</p>
+                    <p>"La meilleure IA pour la créativité. Recommandé à tous les entrepreneurs et créatifs. Mon taux d'innovation a doublé depuis que je l'utilise."</p>
                     <cite>- Marie Leroy, CEO Startup IA</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Interface intuitive et résultats époustouflants. Mon taux d'innovation a doublé !"</p>
+                    <p>"Interface intuitive et résultats époustouflants. J'ai trouvé l'idée parfaite pour mon SaaS qui génère maintenant $50k MRR."</p>
                     <cite>- Jean Martin, Designer Industriel</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Économise des heures de brainstorming. L'IA comprend vraiment mes besoins."</p>
+                    <p>"Économise des heures de brainstorming. L'IA comprend vraiment mes besoins et génère des idées que je n'aurais jamais pensées."</p>
                     <cite>- Sophie Bernard, Consultante Marketing</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"J'ai économisé des semaines de recherche. L'IA génère des idées que je n'aurais jamais pensées."</p>
+                    <p>"J'ai économisé des semaines de recherche. L'idée que j'ai choisie a attiré $3M d'investissement en moins de 6 mois."</p>
                     <cite>- Lucas Petit, Freelance Designer</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Parfait pour brainstormer en équipe. Export facile et idées de qualité."</p>
+                    <p>"Parfait pour brainstormer en équipe. Export facile et idées de qualité. Notre équipe a lancé 3 projets grâce à cet outil."</p>
                     <cite>- Emma Durand, Chef de Projet</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"L'IA m'a aidé à trouver l'idée parfaite pour mon app. Lancée en 2 mois, déjà 10k utilisateurs !"</p>
+                    <p>"L'IA m'a donné l'idée parfaite pour mon app. Lancée en 2 mois, déjà 10k utilisateurs et en pleine croissance exponentielle !"</p>
                     <cite>- Thomas Moreau, Développeur App</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Incroyable ! J'ai généré 200 idées en une heure. Celle que j'ai choisie a attiré $2M d'investissement."</p>
+                    <p>"Incroyable ! J'ai généré 200 idées en une heure. Celle que j'ai retenue a été rachetée pour $5M par une grande entreprise."</p>
                     <cite>- Isabelle Roux, Investisseuse Ange</cite>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"L'IA m'a donné l'idée parfaite pour mon SaaS. Lancé en 2 mois, déjà 50k MRR et en pleine croissance !"</p>
+                    <p>"L'IA m'a donné l'idée parfaite pour mon SaaS. Lancé en 2 mois, déjà 50k MRR et en pleine expansion internationale !"</p>
                     <cite>- Nicolas Fournier, Fondateur SaaS</cite>
                 </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Outil indispensable pour tout entrepreneur sérieux. Les idées générées sont non seulement innovantes mais aussi réalisables immédiatement."</p>
+                    <cite>- Claire Michel, Serial Entrepreneur</cite>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <section class="guarantee">
         <div class="container">
-            <h2>Garantie 100% Satisfait ou Remboursé – 60 Jours Complets</h2>
-            <p>Nous sommes si confiants dans notre IA révolutionnaire que nous doublons la garantie à 60 jours. Si vous n'êtes pas satisfait de vos idées générées ou si elles ne transforment pas votre business, demandez un remboursement intégral. Aucun risque, que du potentiel illimité !</p>
+            <h2>Garantie 90 Jours Satisfait ou Remboursé – Zéro Risque !</h2>
+            <p>Nous sommes si confiants dans notre IA révolutionnaire que nous étendons la garantie à 90 jours complets. Si vous n'êtes pas satisfait de vos idées générées ou si elles ne transforment pas votre business, demandez un remboursement intégral. Aucun risque, que du potentiel illimité – Essayez pendant 3 mois !</p>
             <div class="guarantee-icon">🛡️</div>
         </div>
     </section>
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2>Prix Révolutionnaire : Accès à Vie Complet pour Seulement $5 – Une Offre Qui Ne Revient Pas !</h2>
+            <h2>Investissement Intelligent : Accès Complet à Vie pour Seulement $5 – L'Opportunité de Votre Vie !</h2>
             <div class="price">
                 <h3>$5 – Accès Complet à Vie</h3>
                 <p>Un paiement unique, zéro abonnement mensuel. <span class="highlight">Générez des idées infinies</span> sans limites, frais cachés ou restrictions. Votre outil d'innovation personnel pour toujours, avec mises à jour gratuites à vie.</p>
                 <p>Économisez 80% sur le prix normal de $25. Cet investissement pourrait rapporter des millions – Les opportunités comme celle-ci sont extrêmement rares dans le monde de l'IA !</p>
-                <p class="urgency">⏰ Cette offre exclusive disparaît dans <span id="urgent-time">02:15:30</span> – Agissez IMMÉDIATEMENT avant qu'il ne soit trop tard !</p>
+                <p class="urgency">⏰ Cette offre exclusive disparaît dans <span id="urgent-time">02:15:30</span> – Agissez IMMÉDIATEMENT avant qu'il ne soit trop tard ! Ne laissez pas cette chance vous échapper !</p>
             </div>
         </div>
     </section>
     <section class="faq">
         <div class="container">
-            <h2>Questions Fréquentes</h2>
+            <h2>Questions Fréquentes – Tout Ce Que Vous Devez Savoir</h2>
             <div class="faq-item">
-                <h3>Comment fonctionne le paiement ?</h3>
-                <p>Vous payez $5 une seule fois pour un accès complet à vie. Aucun abonnement, pas de frais cachés. Sécurisé via Stripe.</p>
+                <h3>Comment fonctionne le paiement sécurisé ?</h3>
+                <p>Vous payez $5 une seule fois via Stripe, le système de paiement le plus sécurisé au monde. Aucun abonnement, pas de frais cachés. Accès immédiat après paiement.</p>
             </div>
             <div class="faq-item">
-                <h3>Est-ce sécurisé ?</h3>
-                <p>Oui, nous utilisons le chiffrement de niveau bancaire pour protéger vos données. Conformité RGPD.</p>
+                <h3>Est-ce vraiment sécurisé et privé ?</h3>
+                <p>Oui, nous utilisons le chiffrement de niveau bancaire (SSL 256-bit) pour protéger vos données. Conformité RGPD complète. Vos idées restent 100% confidentielles.</p>
             </div>
             <div class="faq-item">
-                <h3>Puis-je annuler ?</h3>
-                <p>Comme c'est un paiement unique, il n'y a pas d'annulation nécessaire. Vous gardez accès à vos idées.</p>
+                <h3>Puis-je annuler et être remboursé ?</h3>
+                <p>Avec notre garantie 90 jours satisfait ou remboursé, oui ! Si les idées ne vous conviennent pas, contactez-nous pour un remboursement intégral. Zéro risque.</p>
             </div>
             <div class="faq-item">
                 <h3>Quels types d'idées puis-je générer ?</h3>
-                <p>Tout : business, produits, marketing, design, tech, et plus. L'IA s'adapte à votre domaine.</p>
+                <p>Tout : business, produits, marketing, design, tech, SaaS, e-commerce, apps mobiles, et plus. L'IA s'adapte à votre domaine et génère des idées sur mesure.</p>
             </div>
             <div class="faq-item">
                 <h3>Y a-t-il une limite d'utilisation ?</h3>
-                <p>Non, générez autant d'idées que vous voulez après paiement. Pas de frais cachés.</p>
+                <p>Non, générez autant d'idées que vous voulez après paiement. Pas de frais cachés, pas de limites. Utilisez-le autant que nécessaire pour votre succès.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Les idées sont-elles originales et viables ?</h3>
+                <p>Oui ! Chaque idée est validée par l'IA pour son originalité, viabilité commerciale et potentiel de croissance. Nous incluons des analyses pour chaque idée.</p>
             </div>
         </div>
     </section>
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 The Sentinel. Tous droits réservés. Propulsé par IA Avancée.</p>
-                <ul class="footer-links">
-                    <li><a href="#privacy">Politique de Confidentialité</a></li>
-                    <li><a href="#terms">Conditions d'Utilisation</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#support">Support</a></li>
-                </ul>
-            </div>
+            <p>&copy; 2025 The Sentinel. Tous droits réservés. Propulsé par IA Avancée. | Rejoignez 18,500+ entrepreneurs à succès</p>
         </div>
     </footer>
     <script>
@@ -413,20 +405,23 @@
         const timeSpan = document.getElementById('time');
         const spotsEl = document.getElementById('spots-left');
         const progressFill = document.getElementById('progress-fill');
+        const urgentTime = document.getElementById('urgent-time');
         setInterval(() => {
             const hours = Math.floor(timeLeft / 3600);
             const minutes = Math.floor((timeLeft % 3600) / 60);
             const seconds = timeLeft % 60;
             timeSpan.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            urgentTime.textContent = timeSpan.textContent;
             if (timeLeft > 0) timeLeft--;
             else {
                 // Reset or something, but for demo, stop
                 timeSpan.textContent = 'EXPIRÉ';
+                urgentTime.textContent = 'EXPIRÉ';
             }
             // Simulate spots decreasing occasionally
             if (Math.random() < 0.1 && spots > 0) { // 10% chance per second
                 spots--;
-                spotsEl.innerHTML = `🚨 URGENT : Seulement ${spots} places restantes sur 100 – Réservez la vôtre MAINTENANT !`;
+                spotsEl.innerHTML = `🔥 URGENT : Seulement ${spots} places restantes sur 100 – Réservez MAINTENANT !`;
                 progressFill.style.width = `${((100 - spots) / 100) * 100}%`;
             }
         }, 1000);
@@ -438,11 +433,6 @@
                 p.style.display = p.style.display === 'block' ? 'none' : 'block';
             });
         });
-
-        function toggleMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.classList.toggle('active');
-        }
     </script>
 </body>
 </html>
