@@ -101,7 +101,8 @@
         .fomo { animation: blink 1s infinite; }
         @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.5; } }
 
-        @media (max-width: 768px) {
+        .footer { padding: 40px 0; background: rgba(0,0,0,0.9); color: #ccc; text-align: center; border-top: 1px solid rgba(138,43,226,0.3); }
+        .footer p { margin: 0; font-size: 0.9rem; }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.3rem; }
             .cta { font-size: 1.1rem; padding: 15px 30px; }
@@ -117,6 +118,8 @@
             .price h3 { font-size: 2rem; }
             .video-placeholder { width: 95%; height: 280px; }
             .nav-links { display: none; } /* Mobile menu would need JS for toggle */
+            .scarcity, .spots-left { font-size: 1rem; }
+            .countdown { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -134,14 +137,14 @@
     </nav>
     <section class="hero">
         <div class="container">
-            <h1>Arrêtez les Idées Banales : Générez 500+ Concepts Millionnaires en 5 Minutes Avec Notre IA Révolutionnaire</h1>
-            <p>Imaginez : En moins de 5 minutes, accédez à des centaines d'idées disruptives qui ont déjà créé des empires multimillionnaires. Notre IA ultra-avancée, entraînée sur des milliards de données réelles, produit des concepts si innovants qu'ils surpassent toute expertise humaine. 18,500+ entrepreneurs ont levé $50M+ et lancé des startups unicornes grâce à nous. Votre idée révolutionnaire n'attend que vous – et elle pourrait valoir des millions !</p>
+            <h1>Révolutionnez Votre Créativité : Générez 500+ Idées Disruptives en 5 Minutes Avec l'IA Qui a Lancé $50M+ de Startups</h1>
+            <p>Imaginez accéder instantanément à des centaines d'idées révolutionnaires qui ont déjà généré des millions. Notre IA de pointe, entraînée sur des milliards de données réelles, produit des concepts si innovants qu'ils dépassent toute imagination humaine. 18,500+ entrepreneurs ont levé $50M+ et bâti des empires grâce à nous. Votre idée millionnaire n'attend que vous – et elle pourrait transformer votre vie pour toujours !</p>
             <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Accéder Maintenant – Seulement $5 à Vie</button>
-            <div class="scarcity">🚨 DERNIÈRE CHANCE : $5 au lieu de $25 – 80% d'Économie – Cette Offre Explose Bientôt !</div>
-            <div class="countdown" id="countdown">⏰ Offre Expire Dans : <span id="time">02:15:30</span> – Agissez MAINTENANT !</div>
-            <div class="spots-left fomo" id="spots-left">🔥 URGENT : Seulement 47 Places sur 100 Restantes – Ne Manquez Pas Votre Chance !</div>
+            <div class="scarcity">🚨 OFFRE LIMITÉE : $5 au lieu de $25 – 80% de Réduction – Cette Promo Explose Bientôt !</div>
+            <div class="countdown" id="countdown">⏰ Temps Restant : <span id="time">02:15:30</span> – Offre Expire Bientôt !</div>
+            <div class="spots-left fomo" id="spots-left">🔥 URGENT : Seulement 47 Places sur 100 Restantes – Réservez Votre Accès Avant Qu'il ne Soit Trop Tard !</div>
             <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-            <div class="social-proof">⭐⭐⭐⭐⭐ 4.9/5 (3,247 avis vérifiés) | 67,392 idées générées cette semaine | $50M+ levés par nos utilisateurs | Approuvé par Forbes, TechCrunch & MIT | Rejoignez 18,500+ entrepreneurs à succès</div>
+            <div class="social-proof">⭐⭐⭐⭐⭐ 4.9/5 (3,247 avis vérifiés) | 67,392 idées générées cette semaine | $50M+ levés par nos utilisateurs | Approuvé par Forbes, TechCrunch & MIT | Rejoignez 18,500+ entrepreneurs à succès | Plus de 95% de satisfaction client</div>
         </div>
     </section>
     <section class="trusted">
@@ -253,6 +256,21 @@
                     <h3>Générateur de Business Plans IA</h3>
                     <p>Créez automatiquement des business plans complets pour vos idées, incluant analyses SWOT, projections financières et stratégies de lancement – Tout en un clic !</p>
                 </div>
+                <div class="feature">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Dashboard Analytique Avancé</h3>
+                    <p>Suivez vos idées avec des tableaux de bord interactifs : tendances, popularité, et prévisions de succès. Prenez des décisions éclairées sur vos prochains projets.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Mode Collaboration Équipe</h3>
+                    <p>Invitez votre équipe à collaborer en temps réel sur les idées. Votez, commentez et affinez ensemble pour des concepts plus solides et innovants.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Inspiration Contextuelle</h3>
+                    <p>Recevez des idées inspirées par les tendances actuelles du marché, les technologies émergentes et les besoins des consommateurs – Restez toujours à la pointe.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -343,6 +361,11 @@
                     <p>"Outil indispensable pour tout entrepreneur sérieux. Les idées générées sont non seulement innovantes mais aussi réalisables immédiatement."</p>
                     <cite>- Claire Michel, Serial Entrepreneur</cite>
                 </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"J'ai doublé mes revenus en 6 mois grâce à une idée générée ici. L'IA comprend parfaitement le marché et produit des pépites."</p>
+                    <cite>- Antoine Girard, Consultant Digital</cite>
+                </div>
             </div>
         </section>
     <section class="guarantee">
@@ -354,12 +377,12 @@
     </section>
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2>Investissement Intelligent : Accès Complet à Vie pour Seulement $5 – L'Opportunité de Votre Vie !</h2>
+            <h2>Investissement Zéro Risque : Accès Complet à Vie pour Seulement $5 – L'Opportunité Qui Change Tout !</h2>
             <div class="price">
                 <h3>$5 – Accès Complet à Vie</h3>
                 <p>Un paiement unique, zéro abonnement mensuel. <span class="highlight">Générez des idées infinies</span> sans limites, frais cachés ou restrictions. Votre outil d'innovation personnel pour toujours, avec mises à jour gratuites à vie.</p>
                 <p>Économisez 80% sur le prix normal de $25. Cet investissement pourrait rapporter des millions – Les opportunités comme celle-ci sont extrêmement rares dans le monde de l'IA !</p>
-                <p class="urgency">⏰ Cette offre exclusive disparaît dans <span id="urgent-time">02:15:30</span> – Agissez IMMÉDIATEMENT avant qu'il ne soit trop tard ! Ne laissez pas cette chance vous échapper !</p>
+                <p class="urgency">⏰ Cette offre exclusive disparaît dans <span id="urgent-time">02:15:30</span> – Agissez IMMÉDIATEMENT avant qu'il ne soit trop tard ! Ne laissez pas cette chance vous échapper et regrettez pour toujours !</p>
             </div>
         </div>
     </section>
