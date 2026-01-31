@@ -15,6 +15,8 @@
         .nav-links { list-style: none; display: flex; gap: 25px; }
         .nav-links a { color: #e0e0e0; text-decoration: none; transition: all 0.3s; font-weight: 500; }
         .nav-links a:hover { color: #ff1493; transform: translateY(-2px); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: #e0e0e0; margin: 3px 0; transition: 0.3s; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(138,43,226,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(255,20,147,0.05);stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="50" fill="url(%23grad1)"/></svg>') no-repeat center; background-size: cover; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 40%, rgba(138,43,226,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,20,147,0.1) 0%, transparent 50%); animation: hero-bg 10s ease-in-out infinite alternate; }
@@ -93,6 +95,11 @@
         .guarantee h2 { color: #ff1493; font-family: 'Orbitron'; font-size: 2.2rem; margin-bottom: 20px; }
         .guarantee p { color: #d0d0d0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; }
         .guarantee-icon { font-size: 3rem; color: #ffd93d; }
+        .footer { background: rgba(0,0,0,0.8); padding: 40px 0; text-align: center; border-top: 1px solid rgba(138,43,226,0.3); }
+        .footer-content p { margin: 0 0 20px; color: #ccc; }
+        .footer-links { list-style: none; display: flex; justify-content: center; gap: 30px; padding: 0; }
+        .footer-links a { color: #8a2be2; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: #ff1493; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
         @keyframes pulse { 0% { box-shadow: 0 8px 25px rgba(138,43,226,0.4); } 50% { box-shadow: 0 12px 35px rgba(138,43,226,0.7); } 100% { box-shadow: 0 8px 25px rgba(138,43,226,0.4); } }
         @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -114,6 +121,7 @@
             .price h3 { font-size: 2rem; }
             .video-placeholder { width: 95%; height: 280px; }
             .nav-links { display: none; } /* Mobile menu would need JS for toggle */
+            .footer-links { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -127,18 +135,23 @@
                 <li><a href="#testimonials">Témoignages</a></li>
                 <li><a href="#pricing">Tarifs</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
     <section class="hero">
         <div class="container">
-            <h1>Débloquez le Génie en Vous : 100+ Idées Révolutionnaires en 10 Secondes Chrono</h1>
-            <p>Imaginez générer des centaines d'idées disruptives qui transforment votre vie professionnelle en empire multimillionnaire. Notre IA alimentée par l'apprentissage profond crée des concepts que même les experts n'auraient jamais envisagés. Rejoignez 18,500+ visionnaires qui ont lancé des startups millionnaires et levé $50M+ grâce à nos idées innovantes.</p>
-            <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Obtenir Accès Instantané – Seulement $5</button>
-            <div class="scarcity">⚡ FLASH SALE : Seulement $5 au lieu de $25 – Économisez 80% – Cette offre exclusive DISPARAÎT BIENTÔT !</div>
-            <div class="countdown" id="countdown">⏰ Cette offre expire dans : <span id="time">02:15:30</span></div>
-            <div class="spots-left" id="spots-left">🚨 DERNIÈRES PLACES : Seulement 47 restantes sur 100 – Plus que quelques heures avant épuisement total !</div>
+            <h1>Transformez Une Idée Simple en Empire Multimillionnaire : 100+ Concepts Révolutionnaires en 10 Secondes</h1>
+            <p>Imaginez : En 10 secondes, vous détenez des centaines d'idées disruptives capables de transformer votre garage en empire multimillionnaire. Notre IA de pointe, entraînée sur des milliards de données, génère des concepts si innovants qu'ils surpassent l'expertise humaine. Rejoignez 18,500+ visionnaires qui ont déjà levé $50M+ et bâti des startups unicornes avec nos idées révolutionnaires.</p>
+            <button class="cta" onclick="alert('Achat simulé - Intégrez Stripe ici')">Accéder Maintenant – Seulement $5 à Vie</button>
+            <div class="scarcity">🚨 OFFRE LIMITÉE : $5 au lieu de $25 – 80% d'Économie – Cette Promotion Explose Bientôt !</div>
+            <div class="countdown" id="countdown">⏰ Offre Expire Dans : <span id="time">02:15:30</span> – Agissez Maintenant !</div>
+            <div class="spots-left" id="spots-left">🔥 PLACES LIMITÉES : Seulement 47 sur 100 Disponibles – Réservez Avant Qu'Il Soit Trop Tard !</div>
             <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-            <div class="social-proof">⭐⭐⭐⭐⭐ 4.9/5 (3,247 avis vérifiés) | 67,392 idées générées cette semaine | $50M+ levés par nos utilisateurs | Approuvé par Forbes, TechCrunch & MIT</div>
+            <div class="social-proof">🌟 4.9/5 (3,247 Avis Vérifiés) | 67,392 Idées Cette Semaine | $50M+ Levés | Approuvé par Forbes, TechCrunch, MIT | 18,500+ Innovateurs Rejoignent Chaque Mois</div>
         </div>
     </section>
     <section class="trusted">
@@ -156,8 +169,8 @@
     </section>
     <section class="why-choose">
         <div class="container">
-            <h2>Pourquoi 18,500+ Entrepreneurs et Innovateurs Font Confiance à Notre IA Révolutionnaire</h2>
-            <p>Rejoignez l'élite des innovateurs qui transforment des idées simples en empires multimillionnaires. Notre IA a déjà généré des concepts qui ont levé plus de $50M en financement, créé des milliers d'emplois et révolutionné des industries entières.</p>
+            <h2>Pourquoi Des Milliers d'Entrepreneurs Transforment Leur Vie Grâce à Notre IA : Voici Leur Secret</h2>
+            <p>Notre IA n'est pas qu'un outil – c'est le catalyseur qui a permis à 18,500+ visionnaires de passer de l'idée au succès multimillionnaire. Avec plus de $50M levés et des milliers d'emplois créés, rejoignez ceux qui ont révolutionné leur industrie.</p>
             <div class="stats">
                 <div class="stat">18,500+ Utilisateurs Satisfaits</div>
                 <div class="stat">500,000+ Idées Révolutionnaires Générées</div>
@@ -167,7 +180,7 @@
     </section>
     <section class="features" id="features">
         <div class="container">
-            <h2>Fonctionnalités Révolutionnaires Qui Font Toute la Différence</h2>
+            <h2>Découvrez les Fonctionnalités Qui Transforment Votre Créativité en Profits</h2>
             <div class="feature-grid">
                 <div class="feature">
                     <i class="fas fa-bolt"></i>
@@ -244,13 +257,18 @@
                     <h3>Validation IA Intelligente</h3>
                     <p>Chaque idée est automatiquement validée par l'IA pour sa viabilité commerciale, potentiel de croissance et originalité – Maximisez vos chances de succès dès le départ.</p>
                 </div>
+                <div class="feature">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Accès Illimité à Vie</h3>
+                    <p>Générez autant d'idées que vous voulez, quand vous voulez. Aucun frais supplémentaire – votre créativité n'a plus de limites avec cet investissement unique.</p>
+                </div>
             </div>
         </div>
     </section>
     <section class="demo" id="demo">
         <div class="container">
-            <h2>Voir l'IA en Action</h2>
-            <p>Découvrez comment générer des idées révolutionnaires en 30 secondes.</p>
+            <h2>Regardez l'IA Transformer des Idées Ordinaires en Or</h2>
+            <p>Découvrez en vidéo comment notre IA génère des idées révolutionnaires en moins de 30 secondes – et comment elles peuvent changer votre vie.</p>
             <div class="video-placeholder">
                 <i class="fas fa-play-circle"></i>
                 <p>Cliquez pour voir la démo</p>
@@ -281,7 +299,7 @@
     </section>
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2>Ce Que Disent Nos Utilisateurs</h2>
+            <h2>Histoires de Succès Réels : Ce Que Disent Nos 18,500+ Utilisateurs Satisfaits</h2>
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
@@ -340,7 +358,7 @@
     </section>
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2>Investissement Intelligent : Accès à Vie Complet pour Seulement $5 – L'Opportunité de Votre Vie !</h2>
+            <h2>Prix Révolutionnaire : Accès à Vie Complet pour Seulement $5 – Une Offre Qui Ne Revient Pas !</h2>
             <div class="price">
                 <h3>$5 – Accès Complet à Vie</h3>
                 <p>Un paiement unique, zéro abonnement mensuel. <span class="highlight">Générez des idées infinies</span> sans limites, frais cachés ou restrictions. Votre outil d'innovation personnel pour toujours, avec mises à jour gratuites à vie.</p>
@@ -376,7 +394,15 @@
     </section>
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 The Sentinel. Tous droits réservés. Propulsé par IA Avancée.</p>
+            <div class="footer-content">
+                <p>&copy; 2026 The Sentinel. Tous droits réservés. Propulsé par IA Avancée.</p>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Politique de Confidentialité</a></li>
+                    <li><a href="#terms">Conditions d'Utilisation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
     <script>
@@ -412,6 +438,11 @@
                 p.style.display = p.style.display === 'block' ? 'none' : 'block';
             });
         });
+
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
